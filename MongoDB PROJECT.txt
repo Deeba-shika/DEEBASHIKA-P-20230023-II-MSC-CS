@@ -1,0 +1,209 @@
+MongoDB  PROJECT
+
+Microsoft Windows [Version 10.0.19045.4780]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Program Files\MongoDB\mongosh-2.3.0-win32-x64\bin>mongosh
+Current Mongosh Log ID: 66da83b2f7a9de45ac2710bb
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.0
+Using MongoDB:          7.0.14
+Using Mongosh:          2.3.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-09-04T09:45:35.746+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use HCl
+switched to db HCl
+
+
+1) -------INSERT  ONE
+
+HCl> db.Hcl.insertOne({Product_name:"Laptop",Product_id:566,Price:10000})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66da8524f7a9de45ac2710bc')
+}
+HCl> db.Hcl.insertOne({Product_name:"Mouse",Product_id:894,Price:500})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66da8551f7a9de45ac2710bd')
+}
+HCl> db.Hcl.insertOne({Product_name:"Android mobile",Product_id:874,Price:70000})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66da8577f7a9de45ac2710be')
+}
+HCl> db.Hcl.insertOne({Product_name:"CPU",Product_id:973,Price:5000})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66da8590f7a9de45ac2710bf')
+}
+HCl> db.Hcl.insertOne({Product_name:"Keyboard",Product_id:639,Price:1500})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66da85a9f7a9de45ac2710c0')
+}
+HCl> db.Hcl.find()
+[
+  {
+    _id: ObjectId('66da8524f7a9de45ac2710bc'),
+    Product_name: 'Laptop',
+    Product_id: 566,
+    Price: 10000
+  },
+  {
+    _id: ObjectId('66da8551f7a9de45ac2710bd'),
+    Product_name: 'Mouse',
+    Product_id: 894,
+    Price: 500
+  },
+  {
+    _id: ObjectId('66da8577f7a9de45ac2710be'),
+    Product_name: 'Android mobile',
+    Product_id: 874,
+    Price: 70000
+  },
+  {
+    _id: ObjectId('66da8590f7a9de45ac2710bf'),
+    Product_name: 'CPU',
+    Product_id: 973,
+    Price: 5000
+  },
+  {
+    _id: ObjectId('66da85a9f7a9de45ac2710c0'),
+    Product_name: 'Keyboard',
+    Product_id: 639,
+    Price: 1500
+  }
+]
+
+
+2).--------UPDATE  ONE
+
+
+HCl> db.Hcl.updateOne({Product_id:874, Product_name:"Android mobile"},{$set:{Product_name:"Mobile phone"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+HCl> db.Hcl.find()
+[
+  {
+    _id: ObjectId('66da8524f7a9de45ac2710bc'),
+    Product_name: 'Laptop',
+    Product_id: 566,
+    Price: 10000
+  },
+  {
+    _id: ObjectId('66da8551f7a9de45ac2710bd'),
+    Product_name: 'Mouse',
+    Product_id: 894,
+    Price: 500
+  },
+  {
+    _id: ObjectId('66da8577f7a9de45ac2710be'),
+    Product_name: 'Mobile phone',
+    Product_id: 874,
+    Price: 70000
+  },
+  {
+    _id: ObjectId('66da8590f7a9de45ac2710bf'),
+    Product_name: 'CPU',
+    Product_id: 973,
+    Price: 5000
+  },
+  {
+    _id: ObjectId('66da85a9f7a9de45ac2710c0'),
+    Product_name: 'Keyboard',
+    Product_id: 639,
+    Price: 1500
+  }
+]
+
+
+3).----------UPDATE  MANY
+
+
+HCl> db.Hcl.updateMany({Product_id:639},{$set:{Product_name:"Camara",Price:100000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+HCl> db.Hcl.find()
+[
+  {
+    _id: ObjectId('66da8524f7a9de45ac2710bc'),
+    Product_name: 'Laptop',
+    Product_id: 566,
+    Price: 10000
+  },
+  {
+    _id: ObjectId('66da8551f7a9de45ac2710bd'),
+    Product_name: 'Mouse',
+    Product_id: 894,
+    Price: 500
+  },
+  {
+    _id: ObjectId('66da8577f7a9de45ac2710be'),
+    Product_name: 'Mobile phone',
+    Product_id: 874,
+    Price: 70000
+  },
+  {
+    _id: ObjectId('66da8590f7a9de45ac2710bf'),
+    Product_name: 'CPU',
+    Product_id: 973,
+    Price: 5000
+  },
+  {
+    _id: ObjectId('66da85a9f7a9de45ac2710c0'),
+    Product_name: 'Camara',
+    Product_id: 639,
+    Price: 100000
+  }
+]
+
+
+4).---------DELETE ONE
+
+
+HCl> db.Hcl.deleteOne({Product_id:894})
+{ acknowledged: true, deletedCount: 1 }
+HCl> db.Hcl.find()
+[
+  {
+    _id: ObjectId('66da8524f7a9de45ac2710bc'),
+    Product_name: 'Laptop',
+    Product_id: 566,
+    Price: 10000
+  },
+  {
+    _id: ObjectId('66da8577f7a9de45ac2710be'),
+    Product_name: 'Mobile phone',
+    Product_id: 874,
+    Price: 70000
+  },
+  {
+    _id: ObjectId('66da8590f7a9de45ac2710bf'),
+    Product_name: 'CPU',
+    Product_id: 973,
+    Price: 5000
+  },
+  {
+    _id: ObjectId('66da85a9f7a9de45ac2710c0'),
+    Product_name: 'Camara',
+    Product_id: 639,
+    Price: 100000
+  }
+]
+HCl>

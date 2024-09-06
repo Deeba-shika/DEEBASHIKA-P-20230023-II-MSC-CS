@@ -1,0 +1,13 @@
+                                                                                          PROJECT  :  PHOTOGRAPHY ..!
+
+ABSTRACT:
+                 
+                   This project showcases a newly designed photography website featuring a user-friendly interface and comprehensive functionality. 
+The site includes key sections such as a Home page, Capture page, History page, and About page, each tailored to enhance the user experience. 
+The Home page serves as an introduction, while the Capture page highlights a curated selection of reference images taken by the photographer. 
+The History page provides insights into the evolution of the work, and the About page offers background information on the photographer. 
+Overall, the website is crafted to present a visually appealing and informative platform for showcasing and exploring photographic work.
+
+WEBSITE LINK:
+ 
+                  https://www.figma.com/proto/sM7vTqMdx2ftMs78o6HgB5/Untitled?node-id=1-2&node-type=CANVAS&t=KZOjLm0DP1XZaBYF-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2

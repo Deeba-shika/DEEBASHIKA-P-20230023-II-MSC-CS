@@ -1,0 +1,40 @@
+SQL PROJECT
+
+
+Microsoft Windows [Version 10.0.19045.4780]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Administrator\Downloads\sqlite-tools-win-x64-3460100>sqlite3 company.db
+SQLite version 3.46.1 2024-08-13 09:16:08 (UTF-16 console I/O)
+Enter ".help" for usage hints.
+sqlite> create table HCL(Product_name varchar(100), Product_no integer,Retail_price integer, MRP_price integer);
+sqlite> insert into HCL(Product_name, Product_no, Retail_price, MRP_price)values('Laptop',567,10000,15000);
+sqlite> insert into HCL(Product_name, Product_no, Retail_price, MRP_price)values('CPU',354,7000,12000);
+sqlite> insert into HCL(Product_name, Product_no, Retail_price, MRP_price)values('Mouse',287,300,700);
+sqlite> insert into HCL(Product_name, Product_no, Retail_price, MRP_price)values('keyboard',956,500,1200);
+sqlite> insert into HCL(Product_name, Product_no, Retail_price, MRP_price)values('mobile',896,50000,70000);
+sqlite> select * from HCL;
+Laptop|567|10000|15000
+CPU|354|7000|12000
+Mouse|287|300|700
+keyboard|956|500|1200
+mobile|896|50000|70000
+sqlite> update HCL set Product_name='Android' where Product_no=896;
+sqlite> select * from HCL;
+Laptop|567|10000|15000
+CPU|354|7000|12000
+Mouse|287|300|700
+keyboard|956|500|1200
+Android|896|50000|70000
+sqlite> delete from HCL where Product_no=354;
+sqlite> select * from HCL;
+Laptop|567|10000|15000
+Mouse|287|300|700
+keyboard|956|500|1200
+Android|896|50000|70000
+sqlite> alter table HCL add Quality integer;
+sqlite> select * from HCL;
+Laptop|567|10000|15000|
+Mouse|287|300|700|
+keyboard|956|500|1200|
+Android|896|50000|70000|
